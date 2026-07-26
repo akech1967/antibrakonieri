@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#073d4c" />
+  <meta name="description" content="ანტიბრაკონიერი — წყლის ეკოსისტემის დაცვის ჭკვიანი მონიტორინგის სისტემა." />
+  <title>ანტიბრაკონიერი — წყლის დაცვის სისტემა</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+GO:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="ანტიბრაკონიერი — მთავარი">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M8 27c8-13 19-17 33-11-2 12-12 20-25 19l-8 6 2-10-2-4Z"/><path d="M18 31c5-5 10-8 18-10M32 17c-2 4-2 8 1 11"/></svg>
+      </span>
+      <span>ანტი<span>ბრაკონიერი</span></span>
+    </a>
+    <nav aria-label="მთავარი ნავიგაცია">
+      <a href="#system">სისტემა</a>
+      <a href="#how-it-works">როგორ მუშაობს</a>
+      <a href="#mission">მისია</a>
+    </nav>
+    <div class="live-pill"><i></i> სისტემა აქტიურია</div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> ტექნოლოგია ბუნების დასაცავად</p>
+        <h1>ვიცავთ წყალს.<br><em>ვიცავთ სიცოცხლეს.</em></h1>
+        <p class="hero-text">ჭკვიანი მონიტორინგის სისტემა, რომელიც წყალში ელექტრულ ზემოქმედებას მყისიერად აღმოაჩენს და განგაშის სიგნალს აგზავნის.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#system">სისტემის ნახვა <span>↓</span></a>
+          <a class="button text-button" href="#how-it-works"><span class="play">▶</span> როგორ მუშაობს</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="mountain mountain-back"></div>
+        <div class="mountain mountain-front"></div>
+        <div class="reeds reeds-left">⌇⌇⌇</div>
+        <div class="reeds reeds-right">⌇⌇</div>
+        <svg class="fish fish-one" viewBox="0 0 120 54"><path d="M23 27C39 6 76 6 96 27 76 48 39 48 23 27Z"/><path d="m25 27-22-17 5 17-5 17 22-17Z"/><circle cx="82" cy="22" r="2.5"/><path d="M48 12c5 8 6 19 0 29"/></svg>
+        <svg class="fish fish-two" viewBox="0 0 120 54"><path d="M23 27C39 6 76 6 96 27 76 48 39 48 23 27Z"/><path d="m25 27-22-17 5 17-5 17 22-17Z"/><circle cx="82" cy="22" r="2.5"/></svg>
+        <div class="water-lines"></div>
+        <div class="sensor-beam"></div>
+        <div class="sensor">
+          <span class="sensor-light"></span>
+          <div class="sensor-cap"></div>
+          <div class="sensor-body"><i></i><i></i><i></i></div>
+          <div class="sensor-tip"></div>
+        </div>
+      </div>
+      <div class="scroll-hint">გაიგე მეტი <span>⌄</span></div>
+    </section>
+
+    <section class="monitor-section" id="system">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark"><span></span> ცოცხალი მონიტორინგი</p>
+          <h2>აღმომჩენი ხელსაწყოები</h2>
+        </div>
+        <p>სისტემა უწყვეტად აკვირდება წყალში სიგნალს და საფრთხის შემთხვევაში მყისიერ შეტყობინებას აფიქსირებს.</p>
+      </div>
+
+      <article class="device-card" id="device-card" data-state="safe">
+        <div class="card-top">
+          <div class="device-title">
+            <span class="device-icon">
+              <svg viewBox="0 0 36 36"><path d="M18 3v5M6 10l4 4M30 10l-4 4"/><rect x="9" y="10" width="18" height="23" rx="7"/><path d="M14 25h8M14 20h8"/></svg>
+            </span>
+            <div>
+              <span class="tiny-label">აღმომჩენი სადგური</span>
+              <h3>ხელსაწყო <b>#1</b></h3>
+            </div>
+          </div>
+          <div class="status-badge"><i></i><span id="connection-label">ონლაინ</span></div>
+        </div>
+
+        <div class="status-display" aria-live="polite">
+          <div class="pulse-wrap">
+            <span class="pulse-ring"></span>
+            <span class="pulse-ring delay"></span>
+            <span class="shield">
+              <svg viewBox="0 0 54 62"><path d="M27 3 48 11v17c0 14-9 24-21 30C15 52 6 42 6 28V11l21-8Z"/><path d="m17 30 7 7 14-16"/></svg>
+            </span>
+          </div>
+          <p class="status-kicker" id="status-kicker">სისტემა მუშაობს გამართულად</p>
+          <h4 id="status-title">საფრთხე არ დაფიქსირებულა</h4>
+          <p id="status-description">ხელსაწყო აკვირდება წყლის სიგნალს რეალურ დროში</p>
+          <div class="alert-time" id="alert-time" hidden>—</div>
+        </div>
+
+        <div class="card-metrics">
+          <div><span class="metric-icon signal">⌁</span><p>სიგნალის სტატუსი<strong id="signal-value">ნორმალური</strong></p></div>
+          <div><span class="metric-icon clock">◷</span><p>ბოლო შემოწმება<strong id="last-check">ახლახან</strong></p></div>
+          <div><span class="metric-icon network">⌁</span><p>კავშირი<strong>SIM800 / GSM</strong></p></div>
+          <button class="demo-button" id="demo-button" type="button">განგაშის დემო</button>
+        </div>
+      </article>
+      <p class="integration-note"><span>i</span> Google Sheet-თან დაკავშირების შემდეგ მონაცემები აქ ავტომატურად განახლდება.</p>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <p class="eyebrow centered"><span></span> მარტივი და ეფექტური</p>
+      <h2>როგორ მუშაობს სისტემა</h2>
+      <div class="steps">
+        <article><span>01</span><div class="step-icon">≋</div><h3>სიგნალის აღმოჩენა</h3><p>სენსორი უწყვეტად აკვირდება წყალში ელექტრული სიგნალის ცვლილებას.</p></article>
+        <i class="step-line"></i>
+        <article><span>02</span><div class="step-icon">ϟ</div><h3>მყისიერი განგაში</h3><p>საფრთხის დაფიქსირებისას სისტემა ავტომატურად ააქტიურებს განგაშს.</p></article>
+        <i class="step-line"></i>
+        <article><span>03</span><div class="step-icon">▤</div><h3>შეტყობინების გაგზავნა</h3><p>SIM800 აგზავნის SMS-ს და მონაცემი ვებგვერდზე ფიქსირდება.</p></article>
+      </div>
+    </section>
+
+    <section class="mission-section" id="mission">
+      <div>
+        <p class="eyebrow"><span></span> ჩვენი საერთო პასუხისმგებლობა</p>
+        <h2>სუფთა მდინარეები<br>მომავალი თაობებისთვის</h2>
+        <p>ანტიბრაკონიერი აერთიანებს ტექნოლოგიასა და გარემოზე ზრუნვას — რათა უკანონო ელექტროთევზაობაზე რეაგირება სწრაფი და ეფექტური გახდეს.</p>
+      </div>
+      <div class="mission-badge"><strong>24/7</strong><span>უწყვეტი<br>მონიტორინგი</span></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#home"><span class="brand-mark">⌁</span><span>ანტი<span>ბრაკონიერი</span></span></a>
+    <p>ტექნოლოგია, რომელიც ბუნებას იცავს.</p>
+    <span>© 2026 ანტიბრაკონიერი</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
