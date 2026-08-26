@@ -173,40 +173,26 @@ showEvent(
 }
 
 
-// დემო ღილაკი
-if (button) {
+// ბოლო აქტივობების ჩამოშლა
+const activityHistory =
+  document.querySelector("#activity-history");
 
-  let demoIndex = 0;
+const activityList =
+  document.querySelector("#activity-list");
 
-  const demoEvents = [
-    "data",
-    "signal",
-    "theft"
-  ];
+if (button && activityHistory) {
+  button.textContent = "ბოლო აქტივობები";
 
-  button.textContent =
-    "სტატუსების დემო";
+  button.addEventListener("click", () => {
+    activityHistory.hidden =
+      !activityHistory.hidden;
 
-  button.addEventListener(
-    "click",
-    () => {
-
-      const demoType =
-        demoEvents[
-          demoIndex %
-          demoEvents.length
-        ];
-
-      demoIndex++;
-
-      showEvent(
-        demoType,
-        new Date()
-      );
-    }
-  );
+    button.textContent =
+      activityHistory.hidden
+        ? "ბოლო აქტივობები"
+        : "აქტივობების დამალვა";
+  });
 }
-
 
 // პირველად მონაცემის წაკითხვა
 loadLatestEvent();
