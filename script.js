@@ -140,6 +140,7 @@ async function loadLatestEvent() {
     connectionLabel.textContent = "ონლაინ";
 
     if (!result.data) {
+      lastEventKey = "";
       showEvent("", "");
       return;
     }
@@ -153,14 +154,12 @@ async function loadLatestEvent() {
     const eventKey =
       `${eventType}|${eventTime}`;
 
-    if (eventKey !== lastEventKey) {
-      lastEventKey = eventKey;
+    lastEventKey = eventKey;
 
-      showEvent(
-        eventType,
-        eventTime
-      );
-    }
+showEvent(
+  eventType,
+  eventTime
+);
 
   } catch (error) {
     console.error(
