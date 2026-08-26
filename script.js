@@ -153,8 +153,13 @@ async function loadLatestEvent() {
 
     const eventKey =
       `${eventType}|${eventTime}`;
-
+if (eventKey !== lastEventKey) {
+  saveActivity(eventType, eventTime);
+  renderActivityHistory();
+}
     lastEventKey = eventKey;
+
+    
 
 showEvent(
   eventType,
@@ -180,6 +185,67 @@ const activityHistory =
 const activityList =
   document.querySelector("#activity-list");
 
+const HISTORY_KEY = "antiPoacherHistory";
+
+function getActivityHistory() {
+  try {
+    return JSON.parse(
+      localStorage.getItem(HISTORY_KEY) || "[]"
+    );
+  } catch (error) {
+    return [];
+  }
+}
+function saveActivity(type, time) {
+  if (!type) return;
+
+  const history = getActivityHistory();
+
+  if (
+  history[0] &&
+  history[0].type === type &&
+  history[0].time === time
+) {
+  return;
+}
+
+  history.unshift({
+    type: type,
+    time: time
+  });
+
+  localStorage.setItem(
+    HISTORY_KEY,
+    JSON.stringify(history.slice(0, 7))
+  );
+}
+function renderActivityHistory() {
+  if (!activityList) return;
+
+  const history = getActivityHistory();
+
+  activityList.innerHTML = "";
+
+  history.forEach((item) => {
+    const li = document.createElement("li");
+
+    let label = item.type;
+
+if (item.type === "signal") {
+  label = "სიგნალი აღმოჩენილია";
+} else if (item.type === "theft") {
+  label = "გატაცების მცდელობა";
+} else if (item.type === "data") {
+  label = "DATA მოთხოვნა";
+}
+
+li.textContent =
+  `${formatTime(item.time)} — ${label}`;
+
+    activityList.appendChild(li);
+  });
+}
+
 if (button && activityHistory) {
   button.textContent = "ბოლო აქტივობები";
 
@@ -195,6 +261,7 @@ if (button && activityHistory) {
 }
 
 // პირველად მონაცემის წაკითხვა
+renderActivityHistory();
 loadLatestEvent();
 
 
